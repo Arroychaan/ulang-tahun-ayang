@@ -240,6 +240,12 @@ document.addEventListener('DOMContentLoaded', () => {
         glow.style.opacity = '0';
         micHint.innerHTML = "YAY! Lilin berhasil ditiup! 🎉";
 
+        // Play Yey Sound
+        const yeyAudio = document.getElementById('yey-audio');
+        if (yeyAudio) {
+            yeyAudio.play().catch(e => console.log("Audio play error:", e));
+        }
+
         // Massive Confetti
         const duration = 3000;
         const end = Date.now() + duration;
