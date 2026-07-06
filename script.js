@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             typeWriterHero();
             initSwiper();
-            
+
             // Play hero audio after loading
             const heroAudio = document.getElementById('hero-audio');
             if (heroAudio) {
@@ -260,7 +260,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // Typewriter Secret Message
         setTimeout(() => {
             secretContainer.style.display = 'block';
-            const text = "Makasih ya udah jadi bagian paling lucu di hidup aku. Semoga makin dewasa (tapi tetep bocah). Aku sayang kamu, Ucul! 🐻💜\n- Ayang (Jawa Hama)";
+            const text = "Makasih ya udah jadi bagian paling lucu di hidup aku. Semoga ayang kebaikannya semakin melimpah, semoga ayang semakin dewasa tapi jangan terlalu dewasa yaa sayangg, soalnya ayang kalo marah + dewasa banget rey nya serem. wish your the best ayang";
             let j = 0;
             function typeSecret() {
                 if (j < text.length) {

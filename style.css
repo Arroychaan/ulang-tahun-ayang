@@ -203,7 +203,7 @@ h1, h2, h3, h4 { font-family: var(--font-heading); color: var(--color-purple-dar
     box-shadow: 0 6px 16px rgba(155,126,222,0.1);
 }
 .flip-card-front h3 { font-size: 0.85rem; color: var(--color-purple-dark); }
-.rule-icon { font-size: 2.2rem; margin-bottom: 6px; }
+.rule-icon { width: 45px; height: 45px; object-fit: contain; margin-bottom: 8px; filter: drop-shadow(0 4px 6px rgba(0,0,0,0.1)); }
 .flip-card-back {
     background: linear-gradient(135deg, var(--color-purple), var(--color-lavender-accent));
     color: white; transform: rotateY(180deg);
