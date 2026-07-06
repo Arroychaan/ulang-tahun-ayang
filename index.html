@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ucul's Bear Den 🐻💜</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Fredoka:wght@300..700&family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Lottie Player -->
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+
+    <!-- Canvas Confetti -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"></script>
+
+    <!-- Swiper.js -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Splash Screen -->
+    <div id="splash-screen">
+        <lottie-player src="./Loader-Bear.json" background="transparent" speed="1" style="width: 250px; height: 250px;"
+            loop autoplay></lottie-player>
+        <h2 class="loading-text">SABAR AYANG, LOADING DULU</h2>
+    </div>
+
+    <!-- Main Content -->
+    <main id="main-content" style="opacity: 0; display: none;">
+        <!-- Floating Animated Background Particles -->
+        <div class="bg-particles">
+            <div class="particle p1"></div>
+            <div class="particle p2"></div>
+            <div class="particle p3"></div>
+            <div class="particle p4"></div>
+            <div class="particle p5"></div>
+        </div>
+
+        <!-- Swiper Container -->
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+
+                <!-- Slide 1: Hero -->
+                <div class="swiper-slide hero-slide">
+                    <audio id="hero-audio" src="./ucapan-slide-pertama.mp3" preload="auto"></audio>
+                    <div class="glass-card hero-content">
+                        <div class="mascot-container">
+                            <lottie-player src="./easter-bunny.json" background="transparent" speed="1"
+                                style="width: 250px; height: 250px;" loop autoplay></lottie-player>
+                        </div>
+                        <h1 id="hero-title" class="typewriter-text"></h1>
+                        <p class="subtitle fade-in-delayed">Selamat ulang tahun ke-20, sayangku cintaku bububku.</p>
+
+                        <!-- Hari Kita Widget -->
+                        <div id="hari-kita-widget" class="fade-in-delayed">
+                            <span class="icon">🐻</span>
+                            <span id="hari-kita-text">Menghitung hari...</span>
+                        </div>
+
+                        <div class="swipe-indicator fade-in-delayed">
+                            <p>Geser ke bawah sayang</p>
+                            <span class="chevron"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 2: Rules -->
+                <div class="swiper-slide rules-slide">
+                    <div class="glass-card full-card">
+                        <h2 class="section-title">Rey sama Uci Harus:</h2>
+                        <div class="rules-grid">
+                            <div class="flip-card">
+                                <div class="flip-card-inner">
+                                    <div class="flip-card-front"><span class="rule-icon">🍜</span>
+                                        <h3>Mie Instan</h3>
+                                    </div>
+                                    <div class="flip-card-back">
+                                        <p>Jatah mie instan Ucul: MAKS 3x seminggu. Lebih = traktir dimsum.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flip-card">
+                                <div class="flip-card-inner">
+                                    <div class="flip-card-front"><span class="rule-icon">🎮</span>
+                                        <h3>Mabar</h3>
+                                    </div>
+                                    <div class="flip-card-back">
+                                        <p>Wajib main Roblox bareng minimal sekali seminggu.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flip-card">
+                                <div class="flip-card-inner">
+                                    <div class="flip-card-front"><span class="rule-icon">🚫</span>
+                                        <h3>Fakta</h3>
+                                    </div>
+                                    <div class="flip-card-back">
+                                        <p>Dilarang keras bilang Ayang gak lucu. Ucul lucunya cuma 1,5%.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flip-card">
+                                <div class="flip-card-inner">
+                                    <div class="flip-card-front"><span class="rule-icon">🏭</span>
+                                        <h3>Panggilan</h3>
+                                    </div>
+                                    <div class="flip-card-back">
+                                        <p>Ucul: 'Medan Besi Berkarat'. Ayang: 'Jawa Hama'. Resmi.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 3: Voice Note & Dancing Bear -->
+                <div class="swiper-slide media-slide">
+                    <div class="glass-card full-card">
+                        <h2 class="section-title">🎵 Dari Ayang 🎵</h2>
+
+                        <div class="mascot-container">
+                            <lottie-player src="./Cute-bear-dancing.json" background="transparent" speed="1"
+                                style="width: 250px; height: 250px;" loop autoplay></lottie-player>
+                        </div>
+
+                        <div class="audio-player">
+                            <audio id="voice-note" src="./ucapan-selamat-ulang-tahun.mp3"></audio>
+                            <button id="play-btn" class="play-btn">▶</button>
+                            <div class="waveform">
+                                <div class="bar"></div>
+                                <div class="bar"></div>
+                                <div class="bar"></div>
+                                <div class="bar"></div>
+                                <div class="bar"></div>
+                                <div class="bar"></div>
+                            </div>
+                            <span class="audio-hint">Pencet dong!</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 4: Special Video -->
+                <div class="swiper-slide video-slide">
+                    <div class="glass-card full-card">
+                        <h2 class="section-title">💖 Memori Kita 💖</h2>
+                        <div class="video-container">
+                            <!-- Placeholder for 9:16 Video -->
+                            <video id="special-video" loop controls playsinline>
+                                <source src="./ucapan-selamat-ulang-tahun.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 5: Finale (Interactive Cake) -->
+                <div class="swiper-slide finale-slide">
+                    <div class="glass-card full-card finale-content">
+                        <h2 class="section-title" id="finale-title">Make a Wish! 🎂</h2>
+                        <p class="mic-hint" id="mic-hint">Izinkan akses Mic, lalu <strong>Tiup Lilinnya</strong> dari HP
+                            kamu!</p>
+
+                        <button id="start-mic-btn" class="cute-btn">Siap Tiup Lilin 🎤</button>
+
+                        <div class="cake-container" id="cake-container" style="display: none;">
+                            <!-- Ultra CSS Cake -->
+                            <div class="cake">
+                                <div class="plate"></div>
+                                <div class="layer layer-bottom"></div>
+                                <div class="layer layer-middle"></div>
+                                <div class="layer layer-top">
+                                    <div class="drip drip1"></div>
+                                    <div class="drip drip2"></div>
+                                    <div class="drip drip3"></div>
+                                </div>
+                                <div class="candle">
+                                    <div class="flame" id="flame"></div>
+                                    <div class="glow" id="glow"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Secret Message (Hidden initially) -->
+                        <div id="secret-message-container" class="secret-container" style="display: none;">
+                            <p id="secret-message" class="hidden-message"></p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <!-- Pagination -->
+            <div class="swiper-pagination"></div>
+        </div>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
