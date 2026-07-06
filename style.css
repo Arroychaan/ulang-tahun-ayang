@@ -26,7 +26,7 @@
 
 body, html {
     font-family: var(--font-body);
-    width: 100%; height: 100%;
+    width: 100%; height: 100dvh;
     overflow: hidden;
     color: var(--color-text);
     /* Animated mesh gradient background */
@@ -38,7 +38,7 @@ h1, h2, h3, h4 { font-family: var(--font-heading); color: var(--color-purple-dar
 /* ============ ANIMATED MESH BACKGROUND ============ */
 .bg-particles {
     position: fixed; top: 0; left: 0;
-    width: 100vw; height: 100vh;
+    width: 100vw; height: 100dvh;
     pointer-events: none; z-index: 0; overflow: hidden;
     background: linear-gradient(135deg, #FFF5F9 0%, #F0E6FF 30%, #E8F4FD 60%, #FFF0F5 100%);
 }
@@ -67,7 +67,7 @@ h1, h2, h3, h4 { font-family: var(--font-heading); color: var(--color-purple-dar
 /* ============ SPLASH SCREEN ============ */
 #splash-screen {
     position: fixed; top: 0; left: 0;
-    width: 100vw; height: 100vh;
+    width: 100vw; height: 100dvh;
     background: linear-gradient(135deg, #FFF5F9, #F0E6FF);
     display: flex; flex-direction: column;
     justify-content: center; align-items: center;
@@ -86,7 +86,7 @@ h1, h2, h3, h4 { font-family: var(--font-heading); color: var(--color-purple-dar
 }
 
 /* ============ MAIN CONTAINER ============ */
-#main-content { width: 100%; height: 100vh; position: relative; }
+#main-content { width: 100%; height: 100dvh; position: relative; }
 .swiper { width: 100%; height: 100%; z-index: 1; }
 .swiper-slide {
     display: flex; justify-content: center; align-items: center;
@@ -121,7 +121,7 @@ h1, h2, h3, h4 { font-family: var(--font-heading); color: var(--color-purple-dar
     height: 1px;
     background: linear-gradient(90deg, transparent, rgba(255,255,255,0.8), transparent);
 }
-.full-card { height: 88vh; justify-content: center; }
+.full-card { height: 88dvh; justify-content: center; }
 
 /* Section titles with decorative underline */
 .section-title {

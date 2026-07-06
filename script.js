@@ -2,29 +2,37 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- 1. Splash Screen ---
     const splashScreen = document.getElementById('splash-screen');
     const mainContent = document.getElementById('main-content');
+    const splashText = document.querySelector('.loading-text');
 
+    // Simulate loading for 2 seconds, then prompt to tap
     setTimeout(() => {
-        splashScreen.style.transition = 'opacity 0.5s ease';
-        splashScreen.style.opacity = '0';
-        setTimeout(() => {
-            splashScreen.style.display = 'none';
-            mainContent.style.display = 'block';
-            // Must set transition BEFORE changing opacity
-            mainContent.style.transition = 'opacity 1s ease';
-            // Force reflow so browser registers display:block before opacity change
-            mainContent.offsetHeight;
-            mainContent.style.opacity = '1';
+        splashText.innerHTML = "Tap layar untuk membuka 🐻";
+        splashText.style.animation = "pulse 1s infinite";
+        
+        // Wait for user interaction to unlock audio autoplay
+        splashScreen.addEventListener('click', () => {
+            splashScreen.style.transition = 'opacity 0.5s ease';
+            splashScreen.style.opacity = '0';
+            setTimeout(() => {
+                splashScreen.style.display = 'none';
+                mainContent.style.display = 'block';
+                // Must set transition BEFORE changing opacity
+                mainContent.style.transition = 'opacity 1s ease';
+                // Force reflow so browser registers display:block before opacity change
+                mainContent.offsetHeight;
+                mainContent.style.opacity = '1';
 
-            typeWriterHero();
-            initSwiper();
-
-            // Play hero audio after loading
-            const heroAudio = document.getElementById('hero-audio');
-            if (heroAudio) {
-                heroAudio.play().catch(e => console.log("Autoplay prevented by browser:", e));
-            }
-        }, 500);
-    }, 2500);
+                typeWriterHero();
+                initSwiper();
+                
+                // Play hero audio after user has interacted
+                const heroAudio = document.getElementById('hero-audio');
+                if (heroAudio) {
+                    heroAudio.play().catch(e => console.log("Autoplay prevented by browser:", e));
+                }
+            }, 500);
+        }, { once: true });
+    }, 2000);
 
     // --- 2. Swiper.js Initialization ---
     function initSwiper() {
