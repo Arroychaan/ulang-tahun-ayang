@@ -130,7 +130,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (difference >= 0) {
             widgetText.innerText = `Hari ke-${daysDifference + 1} bareng Ucul 💜`;
         } else {
-            widgetText.innerText = `H-${daysDifference} menuju hari jadian kita 🎉`;
+            widgetText.innerText = `H-${daysDifference} menuju hari jadian  🎉`;
         }
     }
     updateHariKita();
